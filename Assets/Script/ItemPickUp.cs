@@ -7,6 +7,7 @@ public class ItemPickUp : MonoBehaviour
     public InteractCollision _interactable;
     public System.Action<int> _pickUpEvent;
     public KeyCode _key;
+    public ColorData _colorData;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +31,6 @@ public class ItemPickUp : MonoBehaviour
         Destroy(this.gameObject);
         _interactable._interact = false;
         _interactable._interactUI.UpdateUI("", true);
+        ColorUI.Instance.AddColor(_colorData);
     }
 }
