@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
-  name: temp
+  _name: temp

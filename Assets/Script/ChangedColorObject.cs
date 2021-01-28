@@ -6,13 +6,24 @@ public class ChangedColorObject : MonoBehaviour
 {
     public ColorTemp _colorTemp;
     public ColorData _currentColor;
+    public ColorData _defaltColor;
     public Material _mat;
-    private float r=200, g=200, b = 200;
+    private float r=255, g=255, b = 255;
+    public Collider _co;
+    public System.Action<int> _defaltMode;
+    public System.Action<int> _colorEvent;
+    private MeshRenderer _mr;
+    public bool _startVisible,_activeColor;
     // Start is called before the first frame update
     void Start()
     {
         ColorController.Instance._colorObj.Add(this);
         _mat = GetComponent<Renderer>().material;
+        _co = GetComponent<MeshCollider>();
+        _defaltMode += delegate { DefaltMode();};
+        _colorEvent += delegate { EventColor();};
+        _mr = GetComponent<MeshRenderer>();
+        //_defaltMode.Invoke(_currentColor);
     }
     public void Update()
     {
@@ -21,8 +32,31 @@ public class ChangedColorObject : MonoBehaviour
             _mat.color = Color.Lerp(_mat.color, _colorTemp._color,Time.deltaTime*4);
         }
     }
+    public void DefaltMode()
+    {
+        if (_currentColor._name == "red")
+        {
+            _co.enabled = true;
+            ChangeColor(_currentColor);
+        }
+    }
+
+    public void EventColor()
+    {
+        print("ActiveEvent");
+        if (_currentColor._name == "red")
+        {
+            print("ActiveEvent2");
+            _co.enabled = false;
+            ChangeColor(_currentColor);
+        }
+    }
+
     public void ChangeColor(ColorData color)
     {
+        if (!_activeColor)
+            return;
+
         if (color._name == "red")
         {
             if (_currentColor._name == "red")
@@ -37,6 +71,7 @@ public class ChangedColorObject : MonoBehaviour
             {
                 _colorTemp._color = new Color(r, 0, b);
             }
+            
         }
         if (color._name == "green")
         {
@@ -52,6 +87,7 @@ public class ChangedColorObject : MonoBehaviour
             {
                 _colorTemp._color = new Color(0, g, b);
             }
+            
         }
         if (color._name == "blue")
         {
@@ -67,6 +103,10 @@ public class ChangedColorObject : MonoBehaviour
             {
                 _colorTemp._color = new Color(0, 0, b);
             }
+        }
+        if (color._name == "temp")
+        {
+            _colorTemp._color = _defaltColor._color;
         }
     }
 }
