@@ -5,8 +5,8 @@
         _MainTex ("Texture", 2D) = "white" {}
 		_Color("Color",Color)=(1,1,1,1)
 		_Transperency("Transperency",Range(0.0,1.0))=1
-		[Toggle(GrayScale)]
-		_GrayScale("GrayScale",Float)=0
+		//[Toggle(GrayScale)]
+		//_GrayScale("GrayScale",Float)=0
     }
     SubShader
     {
@@ -26,7 +26,7 @@
             #pragma fragment frag
             // make fog work
             #pragma multi_compile_fog
-			#pragma shader_feature GrayScale
+			//#pragma shader_feature GrayScale
 
             #include "UnityCG.cginc"
 
@@ -62,9 +62,10 @@
                 // sample the texture
                 fixed4 col = tex2D(_MainTex, i.uv);
 				col=_Color;
-				#ifdef GrayScale
-					col=(col.r+col.g+col.b)/3;
-				#endif
+				
+				//#ifdef GrayScale
+				//	col=(col.r+col.g+col.b)/3;
+				//#endif
 				
 				//Transparent
 				col.a =_Transperency*col.a;
@@ -75,5 +76,5 @@
             ENDCG
         }
     }
-	FallBack Off
+	//FallBack Off
 }
