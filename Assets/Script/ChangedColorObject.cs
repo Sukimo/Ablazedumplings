@@ -14,6 +14,8 @@ public class ChangedColorObject : MonoBehaviour
     public System.Action<int> _colorEvent;
     private MeshRenderer _mr;
     public bool _startVisible,_activeColor;
+    public PlatfromMove _Moveplatfrom;
+    public JumpPlatfrom _jumpPlatfrom;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class ChangedColorObject : MonoBehaviour
         _colorEvent += delegate { EventColor();};
         _mr = GetComponent<MeshRenderer>();
         //_defaltMode.Invoke(_currentColor);
+
+        if(GetComponent<PlatfromMove>()!=null)
+            _Moveplatfrom = GetComponent<PlatfromMove>();
+        if (GetComponent<JumpPlatfrom>() != null)
+            _jumpPlatfrom = GetComponent<JumpPlatfrom>();
     }
     public void Update()
     {
@@ -39,16 +46,35 @@ public class ChangedColorObject : MonoBehaviour
             _co.enabled = true;
             ChangeColor(_currentColor);
         }
+        if (_currentColor._name == "green")
+        {
+            if (_Moveplatfrom != null)
+                _Moveplatfrom.StopMove();
+        }
+        if (_currentColor._name == "blue")
+        {
+            if (_jumpPlatfrom != null)
+                _jumpPlatfrom.StopEvent();
+        }
     }
 
     public void EventColor()
     {
-        print("ActiveEvent");
+        print("ActiveEvent : "+_currentColor._name);
         if (_currentColor._name == "red")
         {
-            print("ActiveEvent2");
             _co.enabled = false;
             ChangeColor(_currentColor);
+        }
+        if (_currentColor._name == "green")
+        {
+            if (_Moveplatfrom != null)
+                _Moveplatfrom.StartMove();
+        }
+        if (_currentColor._name == "blue")
+        {
+            if (_jumpPlatfrom != null)
+                _jumpPlatfrom.StartEvent();
         }
     }
 
