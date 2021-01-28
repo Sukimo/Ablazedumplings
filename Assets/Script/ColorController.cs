@@ -15,11 +15,36 @@ public class ColorController : MonoBehaviour
 
     }
 
-    public void ChangeColor(ColorData color)
+    public void PickUpColor(ColorData color)
     {
         foreach (ChangedColorObject item in _colorObj)
         {
-            item.ChangeColor(color);
+            if (color._color == item._currentColor._color)
+            {
+                item._activeColor = true;
+                item.ChangeColor(color);
+                ColorUI.Instance._isDirty = false;
+            }
+        }
+    }
+
+    public void ResetColor()
+    {
+        foreach (ChangedColorObject item in _colorObj)
+        {
+            item._defaltMode.Invoke(0);
+        }
+    }
+
+    public void AvtiveEvent(ColorData color)
+    {
+        ResetColor();
+        foreach (ChangedColorObject item in _colorObj)
+        {
+            if (color._color == item._currentColor._color)
+            {
+                item._colorEvent.Invoke(0);
+            }
         }
     }
 }

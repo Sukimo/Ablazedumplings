@@ -11,6 +11,7 @@ public class ColorUI : MonoBehaviour
     public List<Transform> _colorUIs = new List<Transform>();
     public UICircle _imgaePrefab;
     public ColorData _currentColor;
+    public bool _isDirty;
     private void Awake()
     {
         Instance = this;
@@ -57,6 +58,16 @@ public class ColorUI : MonoBehaviour
 
     public void UpdateUI(int index)
     {
+        if (_isDirty&&index==_indexColor)
+        {
+            foreach (Transform item in _colorUIs)
+            {
+                item.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            }
+            ColorController.Instance.ResetColor();
+            _isDirty = false;
+            return;
+        }
         if (index >= _colors.Count)
         {
             return;
@@ -68,7 +79,8 @@ public class ColorUI : MonoBehaviour
         }
         _colorUIs[_indexColor].localScale = new Vector3(1, 1, 1);
         _currentColor = _colors[_indexColor];
-        ColorController.Instance.ChangeColor(_currentColor);
+        ColorController.Instance.AvtiveEvent(_currentColor);
+        _isDirty = true;
     }
 
     public void AddColor(ColorData color)
