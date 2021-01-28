@@ -32,5 +32,6 @@ public class ItemPickUp : MonoBehaviour
         _interactable._interact = false;
         _interactable._interactUI.UpdateUI("", false);
         ColorUI.Instance.AddColor(_colorData);
+        ColorController.Instance.ChangeColor(_colorData);
     }
 }

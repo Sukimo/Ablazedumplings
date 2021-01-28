@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7799066643494359015}
   - component: {fileID: 7860367320202810335}
   m_Layer: 0
-  m_Name: ColorData
+  m_Name: ColorDataTemp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 052102c75709d8346abffb0923d0819d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _color: {r: 1, g: 0, b: 0, a: 1}
+  _color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  name: temp
