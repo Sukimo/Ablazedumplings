@@ -7,7 +7,7 @@ public class ChangedColorObject : MonoBehaviour
     public ColorTemp _colorTemp;
     public ColorData _currentColor;
     public Material _mat;
-    private float r=255, g=255, b = 255;
+    private float r=200, g=200, b = 200;
     // Start is called before the first frame update
     void Start()
     {
