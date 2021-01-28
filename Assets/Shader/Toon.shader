@@ -4,7 +4,6 @@
 	{
 		_MainTex("Main Texture", 2D) = "white" {}	
 		_Color("Color", Color) = (0.5, 0.65, 1, 1)
-		_Transperency("Transperency",Range(0.0,1.0))=1
 		[HDR]
 		_AmbientColor("Ambient Color",Color)=(0.4,0.4,0.4,1)
 		[HDR]
@@ -19,6 +18,7 @@
 	SubShader
 	{
 		Tags{ "LightMode"="ForwardBase" "PassFlags"="OnlyDirectional"}
+	
 		Pass
 		{
 			CGPROGRAM
@@ -67,8 +67,7 @@
 			float4 _RimColor;
 			float _RimAmount;
 			float _RimThreshold;
-			float _Transperency;
-
+			
 			float4 frag (v2f i) : SV_Target
 			{
 				float3 normal =normalize(i.worldNormal);
@@ -90,8 +89,7 @@
 				float4 rim = rimIntensity*_RimColor;
 
 				float4 sample = tex2D(_MainTex, i.uv);
-				_Color.a =_Transperency*_Color.a;
-
+			
 				return _Color * sample*(_AmbientColor + light+ specular + rim);
 			}
 			ENDCG

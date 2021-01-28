@@ -1,4 +1,4 @@
-﻿Shader "UnityCustom/GrayscaleShader"
+﻿Shader "Custom/GrayscaleShader"
 {
     Properties
     {
