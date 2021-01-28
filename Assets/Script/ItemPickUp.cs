@@ -30,7 +30,7 @@ public class ItemPickUp : MonoBehaviour
     {
         Destroy(this.gameObject);
         _interactable._interact = false;
-        _interactable._interactUI.UpdateUI("", true);
+        _interactable._interactUI.UpdateUI("", false);
         ColorUI.Instance.AddColor(_colorData);
     }
 }

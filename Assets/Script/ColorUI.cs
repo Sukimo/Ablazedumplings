@@ -10,7 +10,7 @@ public class ColorUI : MonoBehaviour
     public List<ColorData> _colors = new List<ColorData>();
     public List<Transform> _colorUIs = new List<Transform>();
     public UICircle _imgaePrefab;
-    
+    public ColorData _currentColor;
     private void Awake()
     {
         Instance = this;
@@ -67,6 +67,8 @@ public class ColorUI : MonoBehaviour
             item.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
         }
         _colorUIs[_indexColor].localScale = new Vector3(1, 1, 1);
+        _currentColor = _colors[_indexColor];
+        ColorController.Instance.ChangeColor(_currentColor);
     }
 
     public void AddColor(ColorData color)

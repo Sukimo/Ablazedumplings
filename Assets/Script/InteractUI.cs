@@ -10,6 +10,13 @@ public class InteractUI : MonoBehaviour
     public void UpdateUI(string str,bool state)
     {
         _group.gameObject.SetActive(state);
-        _text.text = str;
+        if (state)
+        {
+            _text.text = "[Press F To Pickup " + str + "]";
+        }
+        else
+        {
+            _text.text = "";
+        }
     }
 }

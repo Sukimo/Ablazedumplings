@@ -17,7 +17,7 @@ public class InteractCollision : MonoBehaviour
         if (other.tag == "Player")
         {
             _interact = true;
-            _interactUI.UpdateUI(_detail, true);
+            _interactUI.UpdateUI(transform.parent.name, true);
         }
     }
 
@@ -26,7 +26,7 @@ public class InteractCollision : MonoBehaviour
         if (other.tag == "Player")
         {
             _interact = false;
-            _interactUI.UpdateUI("", true);
+            _interactUI.UpdateUI("", false);
         }
     }
 }
