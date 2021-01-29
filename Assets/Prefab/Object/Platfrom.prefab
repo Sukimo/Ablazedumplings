@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6f97ceb0eb502f7478a1d9860d908adb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   _startVisible: 0
   _activeColor: 0
   _flashDirty: 0
+  _isDirty: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
   _unSelect: {r: 0.39215687, g: 1, b: 0.39215687, a: 1}

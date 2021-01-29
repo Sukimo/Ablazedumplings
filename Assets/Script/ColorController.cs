@@ -6,6 +6,7 @@ public class ColorController : MonoBehaviour
 {
     public static ColorController Instance { get; private set; }
     public List<ChangedColorObject> _colorObj = new List<ChangedColorObject>();
+    public List<ColorData> _cheat = new List<ColorData>();
     private void Awake()
     {
         if (Instance == null)
@@ -22,7 +23,24 @@ public class ColorController : MonoBehaviour
     {
 
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PickUpColor(_cheat[0]);
+            ColorUI.Instance.AddColor(_cheat[0]);
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            PickUpColor(_cheat[1]);
+            ColorUI.Instance.AddColor(_cheat[1]);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+            ColorUI.Instance.AddColor(_cheat[2]);
+        {
+            PickUpColor(_cheat[2]);
+        }
+    }
     public void PickUpColor(ColorData color)
     {
         foreach (ChangedColorObject item in _colorObj)

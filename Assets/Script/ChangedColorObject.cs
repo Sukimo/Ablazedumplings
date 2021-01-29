@@ -13,7 +13,7 @@ public class ChangedColorObject : MonoBehaviour
     public System.Action<int> _defaltMode;
     public System.Action<int> _colorEvent;
     private MeshRenderer _mr;
-    public bool _startVisible,_activeColor,_flashDirty;
+    public bool _startVisible,_activeColor,_flashDirty,_isDirty;
     public PlatfromMove _Moveplatfrom;
     public JumpPlatfrom _jumpPlatfrom;
     public Color _unSelect,_flash;
@@ -40,25 +40,28 @@ public class ChangedColorObject : MonoBehaviour
 
     public void AddChangeColor()
     {
-        StartCoroutine(StartChangeColor());
+        if(!_flashDirty&& !_isDirty)
+            StartCoroutine(StartChangeColor());
     }
     public IEnumerator StartChangeColor()
     {
         StartCoroutine(Flash());
         yield return new WaitUntil(()=>_flashDirty==false);
+        _isDirty = true;
         print("Start");
         float time = 0;
         //_mat.color != _colorTemp._color
         var _matTemp = _mat.color;
 
-        while (_mat.color != _colorTemp._color)
+        while (time<=0.99f)
         {
             _mat.color = Color.Lerp(_matTemp, _colorTemp._color, time);
             time += Time.deltaTime;
             yield return null;
         }
+        _isDirty = false;
         //_mat.color = _colorTemp._color;
-        
+
     }
     public IEnumerator Flash()
     {
@@ -66,7 +69,8 @@ public class ChangedColorObject : MonoBehaviour
         _flashDirty = true;
         float time = 0;
         var _matTemp = _mat.color;
-        while (_mat.color != _flash)
+        //_mat.color != _flash
+        while (time<=0.99f)
         {
             _mat.color = Color.Lerp(_matTemp, _flash, time);
             time += Time.deltaTime * 8.8888f;
