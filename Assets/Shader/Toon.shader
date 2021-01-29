@@ -1,4 +1,4 @@
-﻿Shader "Roystan/Toon"
+﻿Shader "Toon/RoystanToon"
 {
 	Properties
 	{
