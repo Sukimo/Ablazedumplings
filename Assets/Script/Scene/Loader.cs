@@ -12,13 +12,16 @@ public class Loader : MonoBehaviour
     public AsyncOperation asyncOperation;
     void Awake()
     {
+        print("Call From : "+ SceneManager.GetActiveScene().name);
         if (Instance == null)
         {
+            print("GET");
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
         {
+            print("Destroy");
             Destroy(gameObject);
         }
     }
