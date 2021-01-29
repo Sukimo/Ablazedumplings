@@ -63,7 +63,15 @@ public class ColorUI : MonoBehaviour
         }
         #endregion
     }
-
+    public void ResetICON()
+    {
+        foreach (Transform item in _colorUIs)
+        {
+            item.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+        }
+        ColorController.Instance.ResetColor();
+        _isDirty = false;
+    }
     public void UpdateUI(int index)
     {
         if (_isDirty&&index==_indexColor)

@@ -13,9 +13,16 @@ public class ItemPickUp : MonoBehaviour
     public ColorData _colorData;
     public MyEvent _event;
     public string _sceneName;
+    
     // Start is called before the first frame update
     void Start()
     {
+        ColorUI ColorUI = ColorUI.Instance;
+        foreach (ColorData item in ColorUI._colors)
+        {
+            if (item._color == _colorData._color)
+                Destroy(this.gameObject);
+        }
         _pickUpEvent += delegate { Picked(); };
         _interactable._key = _key;
         _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName);});

@@ -30,7 +30,7 @@ public class ColorController : MonoBehaviour
             if (color._color == item._currentColor._color)
             {
                 item._activeColor = true;
-                item.ChangeColor(color);
+                item._defaltMode.Invoke(0);
                 ColorUI.Instance._isDirty = false;
             }
         }

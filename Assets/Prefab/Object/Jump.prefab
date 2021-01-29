@@ -119,6 +119,7 @@ MonoBehaviour:
   _activeColor: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
+  _unSelect: {r: 0.39215687, g: 0.39215687, b: 1, a: 1}
 --- !u!114 &1555397257619758288
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -81,13 +81,14 @@ public class SceneModule : MonoBehaviour
     }
     public IEnumerator Wait(float time)
     {
-        
+        ColorUI.Instance.ResetICON();
         yield return new WaitForSeconds(time);
-        foreach (ColorData item in _listData)
+        foreach (ColorData item in ColorUI.Instance._colors)
         {
             //print("PickUP :" + item._name);
             ColorController.Instance.PickUpColor(item);
         }
         _currentScene = SceneManager.GetActiveScene().name;
+        
     }
 }

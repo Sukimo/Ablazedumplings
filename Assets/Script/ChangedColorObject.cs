@@ -16,14 +16,15 @@ public class ChangedColorObject : MonoBehaviour
     public bool _startVisible,_activeColor;
     public PlatfromMove _Moveplatfrom;
     public JumpPlatfrom _jumpPlatfrom;
+    public Color _unSelect;
     // Start is called before the first frame update
     void Start()
     {
         ColorController.Instance._colorObj.Add(this);
         _mat = GetComponent<Renderer>().material;
         _co = GetComponent<MeshCollider>();
-        _defaltMode += delegate { DefaltMode();};
-        _colorEvent += delegate { EventColor();};
+        _defaltMode += delegate { DefaltMode(); AddChangeColor(); };
+        _colorEvent += delegate { EventColor(); AddChangeColor(); };
         _mr = GetComponent<MeshRenderer>();
         //_defaltMode.Invoke(_currentColor);
 
@@ -34,27 +35,48 @@ public class ChangedColorObject : MonoBehaviour
     }
     public void Update()
     {
-        if (_mat.color != _colorTemp._color)
-        {
-            _mat.color = Color.Lerp(_mat.color, _colorTemp._color,Time.deltaTime*4);
-        }
+        
     }
+
+    public void AddChangeColor()
+    {
+        StartCoroutine(StartChangeColor());
+    }
+    public IEnumerator StartChangeColor()
+    {
+        print("Start");
+        float time = 0;
+        //_mat.color != _colorTemp._color
+        var _matTemp = _mat.color;
+        
+        while (_mat.color != _colorTemp._color)
+        {
+            _mat.color = Color.Lerp(_matTemp, _colorTemp._color, time);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        //_mat.color = _colorTemp._color;
+        
+    }
+
     public void DefaltMode()
     {
         if (_currentColor._name == "red")
         {
             _co.enabled = true;
-            ChangeColor(_currentColor);
+            _colorTemp._color = _unSelect;
         }
         if (_currentColor._name == "green")
         {
             if (_Moveplatfrom != null)
                 _Moveplatfrom.StopMove();
+            _colorTemp._color = _unSelect;
         }
         if (_currentColor._name == "blue")
         {
             if (_jumpPlatfrom != null)
                 _jumpPlatfrom.StopEvent();
+            _colorTemp._color = _unSelect;
         }
     }
 
@@ -64,7 +86,6 @@ public class ChangedColorObject : MonoBehaviour
         if (_currentColor._name == "red")
         {
             _co.enabled = false;
-            ChangeColor(_currentColor);
         }
         if (_currentColor._name == "green")
         {
@@ -76,6 +97,7 @@ public class ChangedColorObject : MonoBehaviour
             if (_jumpPlatfrom != null)
                 _jumpPlatfrom.StartEvent();
         }
+        ChangeColor(_currentColor);
     }
 
     public void ChangeColor(ColorData color)
