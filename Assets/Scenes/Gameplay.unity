@@ -509,7 +509,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Loading
+  m_text: 'Loading. . .
 
 '
   m_isRightToLeft: 0
@@ -1185,9 +1185,11 @@ MonoBehaviour:
   _co: {fileID: 0}
   _startVisible: 0
   _activeColor: 0
+  _flashDirty: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
   _unSelect: {r: 0, g: 0, b: 0, a: 0}
+  _flash: {r: 0, g: 0, b: 0, a: 0}
 --- !u!64 &404891161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2060,6 +2062,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1861746818}
     m_Modifications:
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
         type: 3}
       propertyPath: _unSelect.a
@@ -3037,6 +3059,26 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
         type: 3}
+      propertyPath: _flash.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
+      propertyPath: _flash.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4397115235463067248, guid: c306e5d85a3805c438803c52f37e244f,
+        type: 3}
       propertyPath: _unSelect.a
       value: 1
       objectReference: {fileID: 0}
@@ -3901,7 +3943,7 @@ PrefabInstance:
     - target: {fileID: 2146003433451554365, guid: fe48b0b05501f1d4ea82b53d22ff7ed6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2146003433451554365, guid: fe48b0b05501f1d4ea82b53d22ff7ed6,
         type: 3}
@@ -5691,9 +5733,11 @@ MonoBehaviour:
   _co: {fileID: 0}
   _startVisible: 0
   _activeColor: 0
+  _flashDirty: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
   _unSelect: {r: 0, g: 0, b: 0, a: 0}
+  _flash: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &1909023527
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6106,9 +6150,11 @@ MonoBehaviour:
   _co: {fileID: 0}
   _startVisible: 0
   _activeColor: 0
+  _flashDirty: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
   _unSelect: {r: 0, g: 0, b: 0, a: 0}
+  _flash: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &1983854925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6699,7 +6745,7 @@ PrefabInstance:
     - target: {fileID: 3858621474441608852, guid: fa74ee689d7863c449f812dee17c7b13,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3858621474441608852, guid: fa74ee689d7863c449f812dee17c7b13,
         type: 3}
@@ -6852,7 +6898,7 @@ PrefabInstance:
     - target: {fileID: 6641559869128873888, guid: 9f7e720a887a7a1468d34a1ab23ba64c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6641559869128873888, guid: 9f7e720a887a7a1468d34a1ab23ba64c,
         type: 3}

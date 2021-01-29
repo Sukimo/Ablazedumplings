@@ -117,6 +117,8 @@ MonoBehaviour:
   _co: {fileID: 0}
   _startVisible: 0
   _activeColor: 0
+  _flashDirty: 0
   _Moveplatfrom: {fileID: 0}
   _jumpPlatfrom: {fileID: 0}
   _unSelect: {r: 1, g: 0.39215687, b: 0.39215687, a: 1}
+  _flash: {r: 1, g: 1, b: 1, a: 1}

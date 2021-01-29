@@ -43,7 +43,6 @@ public class PlatfromMove : MonoBehaviour
 
     public void StopMove()
     {
-        print("Stop");
         _isDirty = false;
         _temp = _indexPoint;
     }
