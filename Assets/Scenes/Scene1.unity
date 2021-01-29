@@ -4362,7 +4362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interact: 0
   _interactUI: {fileID: 306953661}
-  _detail: 
+  _detail: Next Level!!
   _key: 0
 --- !u!1 &1721662006
 GameObject:

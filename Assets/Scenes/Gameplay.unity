@@ -5041,7 +5041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interact: 0
   _interactUI: {fileID: 306953661}
-  _detail: 
+  _detail: Color is HEAR!!
   _key: 0
 --- !u!1 &1721662006
 GameObject:
@@ -6578,7 +6578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _interact: 0
   _interactUI: {fileID: 306953661}
-  _detail: 
+  _detail: '[Press F To Get Red Color]'
   _key: 0
 --- !u!4 &732924045717160896
 Transform:

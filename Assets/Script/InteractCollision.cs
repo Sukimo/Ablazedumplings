@@ -17,7 +17,7 @@ public class InteractCollision : MonoBehaviour
         if (other.tag == "Player")
         {
             _interact = true;
-            _interactUI.UpdateUI(transform.parent.name, true, _key);
+            _interactUI.UpdateUI(_detail, true, _key);
         }
     }
 
