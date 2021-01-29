@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 807296550}
   - component: {fileID: 807296551}
   m_Layer: 5
-  m_Name: Loader
+  m_Name: LoaderFix
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

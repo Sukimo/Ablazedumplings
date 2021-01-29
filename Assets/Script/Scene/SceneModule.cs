@@ -26,7 +26,8 @@ public class SceneModule : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        if(_loader==null)
+        _loader = Loader.Instance;
     }
 
     // Update is called once per frame
