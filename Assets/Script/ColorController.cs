@@ -36,8 +36,8 @@ public class ColorController : MonoBehaviour
             ColorUI.Instance.AddColor(_cheat[1]);
         }
         if (Input.GetKeyDown(KeyCode.B))
-            ColorUI.Instance.AddColor(_cheat[2]);
         {
+            ColorUI.Instance.AddColor(_cheat[2]);
             PickUpColor(_cheat[2]);
         }
     }

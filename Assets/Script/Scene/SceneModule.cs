@@ -88,6 +88,7 @@ public class SceneModule : MonoBehaviour
             //print("PickUP :" + item._name);
             ColorController.Instance.PickUpColor(item);
         }
+        ColorUI.Instance._isDirty = false;
         _currentScene = SceneManager.GetActiveScene().name;
         
     }

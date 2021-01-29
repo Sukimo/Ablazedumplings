@@ -48,7 +48,7 @@ public class ChangedColorObject : MonoBehaviour
         StartCoroutine(Flash());
         yield return new WaitUntil(()=>_flashDirty==false);
         _isDirty = true;
-        print("Start");
+
         float time = 0;
         //_mat.color != _colorTemp._color
         var _matTemp = _mat.color;
@@ -60,12 +60,13 @@ public class ChangedColorObject : MonoBehaviour
             yield return null;
         }
         _isDirty = false;
+        yield break;
         //_mat.color = _colorTemp._color;
 
     }
     public IEnumerator Flash()
     {
-        print("Flash");
+
         _flashDirty = true;
         float time = 0;
         var _matTemp = _mat.color;
