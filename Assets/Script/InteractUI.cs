@@ -7,12 +7,16 @@ public class InteractUI : MonoBehaviour
     public TextMeshProUGUI _text;
     public Transform _group;
 
-    public void UpdateUI(string str,bool state)
+    public void UpdateUI(string str,bool state,KeyCode keycode)
     {
+        string key = "";
+        if (keycode == KeyCode.F)
+            key = "F";
+
         _group.gameObject.SetActive(state);
         if (state)
         {
-            _text.text = "[Press F To Pickup " + str + "]";
+            _text.text = "[Press "+key+" To Pickup " + str + "]";
         }
         else
         {

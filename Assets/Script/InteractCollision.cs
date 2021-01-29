@@ -7,7 +7,7 @@ public class InteractCollision : MonoBehaviour
     public bool _interact;
     public InteractUI _interactUI;
     public string _detail;
-
+    public KeyCode _key;
     private void Start()
     {
         
@@ -17,7 +17,7 @@ public class InteractCollision : MonoBehaviour
         if (other.tag == "Player")
         {
             _interact = true;
-            _interactUI.UpdateUI(transform.parent.name, true);
+            _interactUI.UpdateUI(transform.parent.name, true, _key);
         }
     }
 
@@ -26,7 +26,7 @@ public class InteractCollision : MonoBehaviour
         if (other.tag == "Player")
         {
             _interact = false;
-            _interactUI.UpdateUI("", false);
+            _interactUI.UpdateUI("", false, _key);
         }
     }
 }
