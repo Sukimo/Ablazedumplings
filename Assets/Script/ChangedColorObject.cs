@@ -60,7 +60,7 @@ public class ChangedColorObject : MonoBehaviour
 
     public void EventColor()
     {
-        print("ActiveEvent : "+_currentColor._name);
+        //print("ActiveEvent : "+_currentColor._name);
         if (_currentColor._name == "red")
         {
             _co.enabled = false;

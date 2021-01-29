@@ -10,7 +10,7 @@ public class InteractCollision : MonoBehaviour
     public KeyCode _key;
     private void Start()
     {
-        
+        _interactUI = CanvasMain.Instance._interactUI;
     }
     private void OnTriggerEnter(Collider other)
     {

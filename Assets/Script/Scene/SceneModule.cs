@@ -9,7 +9,8 @@ public class SceneModule : MonoBehaviour
     private string _sceneName;
     public Loader _loader;
     public AsyncOperation asyncOperation;
-    
+    public List<ColorData> _listData = new List<ColorData>();
+    public string _currentScene="Gameplay";
     void Awake()
     {
         if (Instance == null)
@@ -36,11 +37,13 @@ public class SceneModule : MonoBehaviour
 
     public void LoadSceneByName(string sceneName)
     {
+        print("LoadScene");
         _sceneName = sceneName;
         if (_sceneName != "")
         {
             _loader._ani.SetTrigger("fadein");
             StartCoroutine(LoadByName());
+            ColorController.Instance._colorObj.Clear();
         }
     }
 
@@ -60,15 +63,31 @@ public class SceneModule : MonoBehaviour
         while (!asyncOperation.isDone)
         {
             //Output the current progress
-            _loader._text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
-
+            //_loader._text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+            _loader._text.text = "Lost&Found";
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)
             {
+                yield return new WaitForSeconds(1);
                 _loader._ani.SetTrigger("fadeout");
             }
 
             yield return null;
         }
+    }
+    public void StartWait(float time)
+    {
+        StartCoroutine(Wait(time));
+    }
+    public IEnumerator Wait(float time)
+    {
+        
+        yield return new WaitForSeconds(time);
+        foreach (ColorData item in _listData)
+        {
+            //print("PickUP :" + item._name);
+            ColorController.Instance.PickUpColor(item);
+        }
+        _currentScene = SceneManager.GetActiveScene().name;
     }
 }

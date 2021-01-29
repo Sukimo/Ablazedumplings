@@ -4,11 +4,19 @@ using UnityEngine;
 
 public class ColorController : MonoBehaviour
 {
-    public static ColorController Instance;
+    public static ColorController Instance { get; private set; }
     public List<ChangedColorObject> _colorObj = new List<ChangedColorObject>();
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     public void Start()
     {

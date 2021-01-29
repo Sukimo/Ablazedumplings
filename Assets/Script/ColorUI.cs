@@ -5,16 +5,24 @@ using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 public class ColorUI : MonoBehaviour
 {
-    public static ColorUI Instance;
+    public static ColorUI Instance { get; private set; }
     public int _indexColor;
     public List<ColorData> _colors = new List<ColorData>();
     public List<Transform> _colorUIs = new List<Transform>();
     public UICircle _imgaePrefab;
     public ColorData _currentColor;
     public bool _isDirty;
-    private void Awake()
+    void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
