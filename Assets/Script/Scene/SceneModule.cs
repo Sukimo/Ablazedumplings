@@ -37,7 +37,17 @@ public class SceneModule : MonoBehaviour
     {
         
     }
-
+    public void LoadSceneByString(string sceneName)
+    {
+        print("LoadScene");
+        _sceneName = sceneName;
+        if (_sceneName != "")
+        {
+            _loader._ani.SetTrigger("fadein");
+            StartCoroutine(LoadByName(false));
+            ColorController.Instance._colorObj.Clear();
+        }
+    }
     public void LoadSceneByName(string sceneName,bool skip)
     {
         print("LoadScene");
