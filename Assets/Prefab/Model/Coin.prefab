@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212136780133632601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.11}
+  m_LocalPosition: {x: 0, y: 0, z: -0.12}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 5678049228500732965}
@@ -159,3 +159,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _paticleEffect: {fileID: 5975630183228225802, guid: 185f13c42380bdc43a7dc105eb2804b3,
     type: 3}
+  _sound: {fileID: 8300000, guid: 8242db50c7710d54f849e40a28156e71, type: 3}
