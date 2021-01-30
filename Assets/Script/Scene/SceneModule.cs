@@ -42,14 +42,23 @@ public class SceneModule : MonoBehaviour
         _sceneName = sceneName;
         if (_sceneName != "")
         {
+            StartCoroutine(PostProcessController.Instance.FadeInColor());
             _loader._ani.SetTrigger("fadein");
             StartCoroutine(LoadByName());
             ColorController.Instance._colorObj.Clear();
         }
     }
 
+    public IEnumerator WaitColor()
+    {
+        StartCoroutine(PostProcessController.Instance.FadeInColor());
+        yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+
+    }
+
     public IEnumerator LoadByName()
     {
+        
         _loader.gameObject.SetActive(true);
         
         yield return null;
@@ -67,6 +76,7 @@ public class SceneModule : MonoBehaviour
             //_loader._text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
             _loader._text.text = "Lost&Found";
             // Check if the load has finished
+            
             if (asyncOperation.progress >= 0.9f)
             {
                 yield return new WaitForSeconds(1);
@@ -83,6 +93,7 @@ public class SceneModule : MonoBehaviour
     public IEnumerator Wait(float time)
     {
         ColorUI.Instance.ResetICON();
+        StartCoroutine(PostProcessController.Instance.FadeOutColor());
         yield return new WaitForSeconds(time);
         foreach (ColorData item in ColorUI.Instance._colors)
         {
