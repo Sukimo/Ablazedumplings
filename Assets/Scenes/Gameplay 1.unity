@@ -3129,7 +3129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77626612b4feca94db8ef013970ed497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skip: 0
+  _skip: 1
 --- !u!65 &342102067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3730,7 +3730,7 @@ PrefabInstance:
     - target: {fileID: 2146003433451554306, guid: fe48b0b05501f1d4ea82b53d22ff7ed6,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2146003433451554361, guid: fe48b0b05501f1d4ea82b53d22ff7ed6,
         type: 3}
@@ -30709,6 +30709,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5016870826223103837, guid: 79a8c780b3244854691e611a26d046fe,
+        type: 3}
+      propertyPath: _skip
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5016870826223103838, guid: 79a8c780b3244854691e611a26d046fe,
         type: 3}
       propertyPath: m_Name
@@ -32129,7 +32134,7 @@ PrefabInstance:
     - target: {fileID: 6641559869128873890, guid: 9f7e720a887a7a1468d34a1ab23ba64c,
         type: 3}
       propertyPath: jumpForce
-      value: 400
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6641559869128873890, guid: 9f7e720a887a7a1468d34a1ab23ba64c,
         type: 3}
