@@ -14,9 +14,12 @@ public class ItemPickUp : MonoBehaviour
     public MyEvent _event;
     public string _sceneName;
     public bool _text;
+    public AudioClip _sound;
+    private AudioSource _source;
     // Start is called before the first frame update
     void Start()
     {
+        _source = Camera.main.GetComponent<AudioSource>();
         if (!_text)
         {
             ColorUI ColorUI = ColorUI.Instance;
@@ -28,7 +31,7 @@ public class ItemPickUp : MonoBehaviour
         }
         _pickUpEvent += delegate { Picked(); };
         _interactable._key = _key;
-        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName,false);});
+        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName,false);if (_sound) _source.PlayOneShot(_sound); });
     }
 
     // Update is called once per frame
