@@ -13,15 +13,18 @@ public class ItemPickUp : MonoBehaviour
     public ColorData _colorData;
     public MyEvent _event;
     public string _sceneName;
-    
+    public bool _text;
     // Start is called before the first frame update
     void Start()
     {
-        ColorUI ColorUI = ColorUI.Instance;
-        foreach (ColorData item in ColorUI._colors)
+        if (!_text)
         {
-            if (item._color == _colorData._color)
-                Destroy(this.gameObject);
+            ColorUI ColorUI = ColorUI.Instance;
+            foreach (ColorData item in ColorUI._colors)
+            {
+                if (item._color == _colorData._color)
+                    Destroy(this.gameObject);
+            }
         }
         _pickUpEvent += delegate { Picked(); };
         _interactable._key = _key;
