@@ -16886,6 +16886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44295cee19caab84aaafbad83ea5e6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isToastShown: 0
   toastText: {fileID: 1694106081377214843}
   anim: {fileID: 1677081219749527187}
   co:
@@ -16895,6 +16896,7 @@ MonoBehaviour:
   - {r: 0, g: 0.38301226, b: 0.6102941, a: 0.8392157}
   - {r: 0.5121701, g: 0, b: 0.7352941, a: 0.8392157}
   - {r: 0.78676474, g: 0, b: 0.34183556, a: 0.8392157}
+  _objectCollistion: {fileID: 0}
 --- !u!114 &1693508645872518585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16930,7 +16932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09558821, g: 0.09558821, b: 0.09558821, a: 0.841}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.841}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -16966,12 +16968,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_Font: {fileID: 12800000, guid: 58b647c5b2ec4184e9a07a561cdf0644, type: 3}
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 12
-    m_MaxSize: 18
+    m_MinSize: 3
+    m_MaxSize: 30
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
