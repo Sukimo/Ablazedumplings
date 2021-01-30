@@ -16,6 +16,7 @@ public class ItemPickUp : MonoBehaviour
     public bool _text;
     public AudioClip _sound;
     private AudioSource _source;
+    public GameObject _paticleEffect;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +32,13 @@ public class ItemPickUp : MonoBehaviour
         }
         _pickUpEvent += delegate { Picked(); };
         _interactable._key = _key;
-        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName,false);if (_sound) _source.PlayOneShot(_sound); });
+        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName,false);
+            if (_sound) _source.PlayOneShot(_sound);
+            if (_paticleEffect)
+            {
+                Destroy(Instantiate(_paticleEffect, transform.position, Quaternion.identity).gameObject,5);
+            }
+        });
     }
 
     // Update is called once per frame
