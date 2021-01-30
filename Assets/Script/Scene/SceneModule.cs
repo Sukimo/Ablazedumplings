@@ -11,6 +11,7 @@ public class SceneModule : MonoBehaviour
     public AsyncOperation asyncOperation;
     public List<ColorData> _listData = new List<ColorData>();
     public string _currentScene="Gameplay";
+    public bool _menu;
     void Awake()
     {
         if (Instance == null)
@@ -42,10 +43,18 @@ public class SceneModule : MonoBehaviour
         _sceneName = sceneName;
         if (_sceneName != "")
         {
-            StartCoroutine(PostProcessController.Instance.FadeInColor());
-            _loader._ani.SetTrigger("fadein");
-            StartCoroutine(LoadByName());
-            ColorController.Instance._colorObj.Clear();
+            if (_menu)
+            {
+                StartCoroutine(PostProcessController.Instance.FadeInColor());
+                _loader._ani.SetTrigger("fadein");
+                StartCoroutine(LoadByName());
+                ColorController.Instance._colorObj.Clear();
+            }
+            else
+            {
+                StartCoroutine(WaitColor());
+            }
+            
         }
     }
 
@@ -53,12 +62,15 @@ public class SceneModule : MonoBehaviour
     {
         StartCoroutine(PostProcessController.Instance.FadeInColor());
         yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+        _loader._ani.SetTrigger("fadein");
+        StartCoroutine(LoadByName());
+        ColorController.Instance._colorObj.Clear();
 
     }
 
     public IEnumerator LoadByName()
     {
-        
+        _menu = false;
         _loader.gameObject.SetActive(true);
         
         yield return null;

@@ -932,6 +932,7 @@ MonoBehaviour:
   - {fileID: 7860367320202810335, guid: cbf2a0d9d65a24748a79f20ebae8a815, type: 3}
   - {fileID: 7860367320202810335, guid: a2abbf9d59c49d640935486a69fd2012, type: 3}
   _currentScene: Gameplay
+  _menu: 0
 --- !u!1 &275048552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2563,7 +2564,7 @@ MonoBehaviour:
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
   m_ShowToolkit: 0
-  m_ShowCustomSorter: 1
+  m_ShowCustomSorter: 0
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
@@ -4124,6 +4125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Volume: {fileID: 1085076250}
   m_ColorGrading: {fileID: 0}
+  _isDirty: 0
 --- !u!1 &1103343875
 GameObject:
   m_ObjectHideFlags: 0
