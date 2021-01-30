@@ -1154,6 +1154,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ani: {fileID: 807296550}
   _text: {fileID: 1721662008}
+--- !u!1 &947229269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947229271}
+  - component: {fileID: 947229270}
+  m_Layer: 5
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947229270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947229269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180a56459bd1d88479925f1bd513db48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: ddf0cb0879d11d54ebd0898fe9cce540, type: 2}
+--- !u!224 &947229271
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947229269}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.97610915, y: 0.97610915, z: 0.97610915}
+  m_Children: []
+  m_Father: {fileID: 2041422741}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 839.3757, y: 315.38345}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1085076249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1981,7 @@ RectTransform:
   - {fileID: 550644328}
   - {fileID: 1085076252}
   - {fileID: 1592874860364302015}
+  - {fileID: 947229271}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2169,6 +2219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44295cee19caab84aaafbad83ea5e6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isToasting: 0
+  _isToastShown: 0
   toastText: {fileID: 1694106081377214843}
   anim: {fileID: 1677081219749527187}
   co:
@@ -2178,6 +2230,7 @@ MonoBehaviour:
   - {r: 0, g: 0.38301226, b: 0.6102941, a: 0.8392157}
   - {r: 0.5121701, g: 0, b: 0.7352941, a: 0.8392157}
   - {r: 0.78676474, g: 0, b: 0.34183556, a: 0.8392157}
+  _objectCollistion: {fileID: 0}
 --- !u!114 &1693508645872518585
 MonoBehaviour:
   m_ObjectHideFlags: 0
