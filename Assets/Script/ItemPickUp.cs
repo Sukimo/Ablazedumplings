@@ -28,7 +28,7 @@ public class ItemPickUp : MonoBehaviour
         }
         _pickUpEvent += delegate { Picked(); };
         _interactable._key = _key;
-        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName);});
+        _event.AddListener(delegate { SceneModule.Instance.LoadSceneByName(_sceneName,false);});
     }
 
     // Update is called once per frame

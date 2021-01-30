@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class KillZone : MonoBehaviour
 {
+    public bool _skip;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            SceneModule.Instance.LoadSceneByName(SceneModule.Instance._currentScene);
+            SceneModule.Instance.LoadSceneByName(SceneModule.Instance._currentScene, _skip);
         }
     }
 }

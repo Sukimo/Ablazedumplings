@@ -12,6 +12,7 @@ public class SceneModule : MonoBehaviour
     public List<ColorData> _listData = new List<ColorData>();
     public string _currentScene="Gameplay";
     public bool _menu;
+   
     void Awake()
     {
         if (Instance == null)
@@ -37,7 +38,7 @@ public class SceneModule : MonoBehaviour
         
     }
 
-    public void LoadSceneByName(string sceneName)
+    public void LoadSceneByName(string sceneName,bool skip)
     {
         print("LoadScene");
         _sceneName = sceneName;
@@ -45,30 +46,33 @@ public class SceneModule : MonoBehaviour
         {
             if (_menu)
             {
-                StartCoroutine(PostProcessController.Instance.FadeInColor());
+                if (skip)
+                    StartCoroutine(PostProcessController.Instance.FadeInColor());
                 _loader._ani.SetTrigger("fadein");
-                StartCoroutine(LoadByName());
+                StartCoroutine(LoadByName(skip));
                 ColorController.Instance._colorObj.Clear();
             }
             else
             {
-                StartCoroutine(WaitColor());
+                StartCoroutine(WaitColor(skip));
             }
-            
         }
     }
 
-    public IEnumerator WaitColor()
+    public IEnumerator WaitColor(bool skip)
     {
-        StartCoroutine(PostProcessController.Instance.FadeInColor());
-        yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+        if (!skip)
+        {
+            StartCoroutine(PostProcessController.Instance.FadeInColor());
+            yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+        }
         _loader._ani.SetTrigger("fadein");
-        StartCoroutine(LoadByName());
+        StartCoroutine(LoadByName(skip));
         ColorController.Instance._colorObj.Clear();
 
     }
 
-    public IEnumerator LoadByName()
+    public IEnumerator LoadByName(bool skip)
     {
         _menu = false;
         _loader.gameObject.SetActive(true);
@@ -114,6 +118,5 @@ public class SceneModule : MonoBehaviour
         }
         ColorUI.Instance._isDirty = false;
         _currentScene = SceneManager.GetActiveScene().name;
-        
     }
 }

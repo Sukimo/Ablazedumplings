@@ -1195,6 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77626612b4feca94db8ef013970ed497, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _skip: 1
 --- !u!65 &342102067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2487,6 +2488,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _sceneName: Scene1
+  _text: 0
 --- !u!65 &769419292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2920,6 +2922,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _sceneName: 
+  _text: 1
 --- !u!65 &827796251
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3163,6 +3166,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sceneName: 
+  _text: 0
 --- !u!65 &850767307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4510,6 +4514,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _sceneName: 
+  _text: 0
 --- !u!65 &1398387105
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4872,6 +4877,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sceneName: 
+  _text: 0
 --- !u!65 &1527718739
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5569,6 +5575,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _sceneName: 
+  _text: 0
 --- !u!1 &1800113636
 GameObject:
   m_ObjectHideFlags: 0
@@ -6143,6 +6150,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _sceneName: 
+  _text: 0
 --- !u!65 &1936204018
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6550,6 +6558,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sceneName: 
+  _text: 0
 --- !u!65 &2022874366
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6664,6 +6673,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _sceneName: 
+  _text: 0
 --- !u!65 &2059497969
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16671,6 +16681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44295cee19caab84aaafbad83ea5e6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isToasting: 0
   _isToastShown: 0
   toastText: {fileID: 1694106081377214843}
   anim: {fileID: 1677081219749527187}
@@ -17025,6 +17036,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016870826223103837, guid: 79a8c780b3244854691e611a26d046fe,
+        type: 3}
+      propertyPath: _skip
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5016870826223103838, guid: 79a8c780b3244854691e611a26d046fe,
         type: 3}

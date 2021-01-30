@@ -45,7 +45,7 @@ public class SFPSC_PlayerMovement : MonoBehaviour
 
     private SFPSC_WallRun wallRun;
     private SFPSC_GrapplingHook grapplingHook;
-
+    public Animator _ani;
     private void Start()
     {
         rb = this.GetComponent<Rigidbody>();
@@ -105,6 +105,15 @@ public class SFPSC_PlayerMovement : MonoBehaviour
             }
             // Ground controller
             rb.velocity = Vector3.Lerp(rb.velocity, inputForce, changeInStageSpeed * Time.fixedDeltaTime);
+
+            if (Input.GetKeyDown(KeyCode.W)|| Input.GetKeyDown(KeyCode.A)|| Input.GetKeyDown(KeyCode.S)||Input.GetKeyDown(KeyCode.D))
+            {
+                _ani.SetTrigger("walk");
+            }
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
+            {
+                _ani.SetTrigger("idle");
+            }
         }
         else
             // Air control
