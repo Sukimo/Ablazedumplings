@@ -9,18 +9,29 @@ using UnityEngine.UI;
 public class Toast : MonoBehaviour {
 	float _counter = 0f;
 	float _duration;
-	bool _isToasting = false;
+	public bool _isToasting = false;
 	public bool _isToastShown = false;
 
-	public static Toast Instance;
-	[SerializeField] Text toastText;
+    public static Toast Instance { get; private set; }
+    [SerializeField] Text toastText;
 	[SerializeField] Animator anim;
 	[SerializeField] Color[] co;
 	Image toastColorImage;
     public InteractCollision _objectCollistion;
 	public enum ToastColor{Dark,Red,Green,Blue,Magenta,Pink}
 
-	void Awake () {Instance = this;}
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
 	void Start () {toastColorImage = GetComponent <Image> ();}
 

@@ -20,6 +20,7 @@ public class ToastDownAni : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.GetComponent<Toast>()._isToastShown = false;
+        animator.GetComponent<Toast>()._isToasting = false;
         if (animator.GetComponent<Toast>()._objectCollistion._interact)
             animator.GetComponent<Toast>()._objectCollistion.ShowText();
     }
