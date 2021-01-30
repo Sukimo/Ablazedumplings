@@ -16,8 +16,8 @@ public class InteractCollision : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _interact = true;
-            _interactUI.UpdateUI(_detail, true, _key);
+            Toast.Instance._objectCollistion = this;
+            ShowText();
         }
     }
 
@@ -25,8 +25,20 @@ public class InteractCollision : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            _interact = false;
-            _interactUI.UpdateUI("", false, _key);
+            HideText();
         }
+    }
+
+    public void ShowText()
+    {
+        _interact = true;
+        _interactUI.UpdateUI(_detail, true, _key);
+    }
+
+    public void HideText()
+    {
+        _interact = false;
+        _interactUI.UpdateUI("", false, _key);
+        Toast.Instance.ResetToast();
     }
 }

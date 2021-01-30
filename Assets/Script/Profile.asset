@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 6819707212539554321}
---- !u!114 &6819707212539554321
+  - {fileID: 3247210422173448589}
+--- !u!114 &3247210422173448589
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,7 +39,7 @@ MonoBehaviour:
     defaultState: 1
   tonemapper:
     overrideState: 1
-    value: 1
+    value: 0
   toneCurveToeStrength:
     overrideState: 1
     value: 0
@@ -73,13 +73,13 @@ MonoBehaviour:
     value: 0
   colorFilter:
     overrideState: 1
-    value: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+    value: {r: 1, g: 1, b: 1, a: 1}
   hueShift:
     overrideState: 1
     value: 0
   saturation:
     overrideState: 1
-    value: 100
+    value: 0
   brightness:
     overrideState: 1
     value: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
     value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     overrideState: 1
-    value: {x: 0.9433881, y: 0.98560625, z: 1, w: 0}
+    value: {x: 1, y: 1, z: 1, w: 0}
   gain:
     overrideState: 1
     value: {x: 1, y: 1, z: 1, w: 0}
