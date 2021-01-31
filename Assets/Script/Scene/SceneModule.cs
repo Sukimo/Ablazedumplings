@@ -73,8 +73,9 @@ public class SceneModule : MonoBehaviour
     {
         if (!skip)
         {
-            StartCoroutine(PostProcessController.Instance.FadeInColor());
-            yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+            //StartCoroutine(PostProcessController.Instance.FadeInColor());
+            //yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+            yield return null;
         }
         _loader._ani.SetTrigger("fadein");
         StartCoroutine(LoadByName(skip));
