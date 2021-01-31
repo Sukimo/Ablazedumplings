@@ -120,7 +120,7 @@ public class SceneModule : MonoBehaviour
     public IEnumerator Wait(float time)
     {
         ColorUI.Instance.ResetICON();
-        StartCoroutine(PostProcessController.Instance.FadeOutColor());
+        //StartCoroutine(PostProcessController.Instance.FadeOutColor());
         yield return new WaitForSeconds(time);
         foreach (ColorData item in ColorUI.Instance._colors)
         {
