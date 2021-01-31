@@ -11,7 +11,7 @@ public class Toast : MonoBehaviour {
 	float _duration;
 	public bool _isToasting = false;
 	public bool _isToastShown = false;
-
+    public GameObject _button,_startButton;
     public static Toast Instance { get; private set; }
     [SerializeField] Text toastText;
 	[SerializeField] Animator anim;
@@ -19,7 +19,7 @@ public class Toast : MonoBehaviour {
 	Image toastColorImage;
     public InteractCollision _objectCollistion;
 	public enum ToastColor{Dark,Red,Green,Blue,Magenta,Pink}
-
+    public bool _end;
     void Awake()
     {
         if (Instance == null)
@@ -54,7 +54,19 @@ public class Toast : MonoBehaviour {
                 ResetToast();
             }
         }
-
+        if (_end)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
+                /*
+                SceneModule.Instance.LoadSceneByName("Menu", true);
+                Destroy(ScoreController.Instance.gameObject);
+                _button.gameObject.SetActive(false);
+                _end = false;
+                _startButton.gameObject.SetActive(true);*/
+            }
+        }
         
 	}
     public void ResetToast()
