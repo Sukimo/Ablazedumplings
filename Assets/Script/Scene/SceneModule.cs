@@ -84,9 +84,10 @@ public class SceneModule : MonoBehaviour
 
     public IEnumerator LoadByName(bool skip)
     {
+        if (!_menu)
+            ScoreController.Instance._isDirty = false;
         _menu = false;
         _loader.gameObject.SetActive(true);
-        
         yield return null;
 
         //Begin to load the Scene you specify
@@ -128,5 +129,7 @@ public class SceneModule : MonoBehaviour
         }
         ColorUI.Instance._isDirty = false;
         _currentScene = SceneManager.GetActiveScene().name;
+        ScoreController.Instance._isDirty = true;
+        ScoreController.Instance.Show(true);
     }
 }

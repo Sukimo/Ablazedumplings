@@ -19,9 +19,13 @@ public class ToastDownAni : StateMachineBehaviour
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Toast>()._isToastShown = false;
-        animator.GetComponent<Toast>()._isToasting = false;
-        if (animator.GetComponent<Toast>()._objectCollistion._interact)
-            animator.GetComponent<Toast>()._objectCollistion.ShowText();
+        Toast toast = animator.GetComponent<Toast>();
+        toast._isToastShown = false;
+        toast._isToasting = false;
+        if (toast._objectCollistion._interact)
+            toast._objectCollistion.ShowText();
+
+        if (toast._end)
+            toast._button.gameObject.SetActive(true);
     }
 }
