@@ -51,7 +51,7 @@ public class ScoreController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        _isDirty = true;
+        _isDirty = false;
     }
 
     public void CheckCoin(Coin coin)

@@ -12,7 +12,7 @@ public class Coin : MonoBehaviour
     {
         foreach (Transform item in ScoreController.Instance.gameObject.transform)
         {
-            print(item.name + " " + this.gameObject.name);
+            //print(item.name + " " + this.gameObject.name);
             if (item.name == this.gameObject.name)
             {
                 Destroy(this.gameObject);

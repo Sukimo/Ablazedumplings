@@ -73,8 +73,8 @@ public class SceneModule : MonoBehaviour
     {
         if (!skip)
         {
-            //StartCoroutine(PostProcessController.Instance.FadeInColor());
-            //yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
+            StartCoroutine(PostProcessController.Instance.FadeInColor());
+            yield return new WaitUntil(() => !PostProcessController.Instance._isDirty);
             yield return null;
         }
         _loader._ani.SetTrigger("fadein");
@@ -104,10 +104,9 @@ public class SceneModule : MonoBehaviour
             //_loader._text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
             _loader._text.text = "Lost&Found";
             // Check if the load has finished
-            
             if (asyncOperation.progress >= 0.9f)
             {
-                yield return new WaitForSeconds(1);
+                yield return new WaitForSeconds(2);
                 _loader._ani.SetTrigger("fadeout");
             }
 

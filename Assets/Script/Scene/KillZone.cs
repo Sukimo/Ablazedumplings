@@ -5,6 +5,10 @@ using UnityEngine;
 public class KillZone : MonoBehaviour
 {
     public bool _skip;
+    private void Start()
+    {
+        ScoreController.Instance._isDirty = true;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
