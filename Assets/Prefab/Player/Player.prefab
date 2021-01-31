@@ -160,7 +160,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334960081067335082}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e0249e9e6ed564547b72f843f0d0393b, type: 2}
   m_CullingMode: 0
@@ -4072,7 +4072,7 @@ MonoBehaviour:
   groundCheckerDist: 0.9
   jumpForce: 200
   jumpCooldown: 1
-  _ani: {fileID: 1583058662786595744}
+  _ani: {fileID: 9155570505563194062}
 --- !u!114 &6641559869128873891
 MonoBehaviour:
   m_ObjectHideFlags: 0

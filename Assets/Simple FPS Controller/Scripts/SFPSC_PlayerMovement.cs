@@ -102,6 +102,7 @@ public class SFPSC_PlayerMovement : MonoBehaviour
                 rb.AddForce(-jumpForce * rb.mass * Vector3.down);
                 jumpBlocked = true;
                 Invoke("UnblockJump", jumpCooldown);
+                _ani.SetTrigger("jump");
             }
             // Ground controller
             rb.velocity = Vector3.Lerp(rb.velocity, inputForce, changeInStageSpeed * Time.fixedDeltaTime);
