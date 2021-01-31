@@ -102,7 +102,7 @@ public class SceneModule : MonoBehaviour
         {
             //Output the current progress
             //_loader._text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
-            _loader._text.text = "Lost&Found";
+            _loader._text.text = "Find me Nyan!";
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)
             {
