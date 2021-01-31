@@ -18,7 +18,7 @@ public class Coin : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        transform.parent = ScoreController.Instance.gameObject.transform;
+        
         //ScoreController.Instance.CheckCoin(this);
         _source = Camera.main.GetComponent<AudioSource>();
         ScoreController.Instance._allCoin +=1;
@@ -32,6 +32,7 @@ public class Coin : MonoBehaviour
                 if (_sound) _source.PlayOneShot(_sound);
                 Destroy(Instantiate(_paticleEffect, transform.position, Quaternion.identity).gameObject, 5);
             }
+            transform.parent = ScoreController.Instance.gameObject.transform;
             ScoreController.Instance.AddScore(_score);
             //this.transform.parent = ScoreController.Instance.transform;
             gameObject.SetActive(false);
